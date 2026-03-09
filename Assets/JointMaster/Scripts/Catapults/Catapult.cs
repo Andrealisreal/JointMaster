@@ -9,13 +9,15 @@ namespace JointMaster.Scripts.Catapults
     {
         [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private ProjectileSpawner _spawner;
-        
-        private Transform _startPosition;
+
+        private Vector3 _startPosition;
+        private Quaternion _startRotation;
 
         private void Awake()
         {
             _rigidbody.isKinematic = true;
-            _startPosition = transform;
+            _startPosition = transform.position;
+            _startRotation = transform.rotation;
             _spawner.Spawn();
         }
 
@@ -25,7 +27,8 @@ namespace JointMaster.Scripts.Catapults
         public void Charge()
         {
             _rigidbody.isKinematic = true;
-            transform.position = _startPosition.position;
+            transform.position = _startPosition;
+            transform.rotation = _startRotation;
             _spawner.Spawn();
         }
     }

@@ -33,25 +33,21 @@ namespace JointMaster.Scripts.Players
             _input.ChargeClicked -= OnCharge;
             _input.FireClicked -= OnFire;
         }
-        
+
         public void Initialize(Swing swing, Catapult catapult, PlayerConfig config)
         {
             _swing = swing;
             _config = config;
             _catapult = catapult;
         }
-        
+
         private void OnSwing() =>
             _swing.SetForce(_config.Force);
 
-        private void OnFire()
-        {
+        private void OnFire() =>
             _catapult.Fire();
-        }
 
-        private void OnCharge()
-        {
+        private void OnCharge() =>
             _catapult.Charge();
-        }
     }
 }

@@ -12,9 +12,7 @@ namespace JointMaster.Scripts
         [SerializeField] private Swing _swing;
         [SerializeField] private Catapult _catapult;
 
-        private void Awake()
-        {
+        private void Awake() =>
             _player.Initialize(_swing, _catapult, _playerConfig);
-        }
     }
 }
