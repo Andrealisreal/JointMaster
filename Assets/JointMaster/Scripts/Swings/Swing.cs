@@ -7,7 +7,7 @@ namespace JointMaster.Scripts.Swings
     {
         [SerializeField] private Rigidbody _rigidbody;
 
-        public void SetForce(float force) =>
+        public void AddForce(float force) =>
             _rigidbody.AddForce(Vector3.forward * force, ForceMode.Impulse);
     }
 }

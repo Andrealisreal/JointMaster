@@ -3,7 +3,7 @@ using UnityEngine;
 namespace JointMaster.Scripts.Players
 {
     [CreateAssetMenu(fileName = "PlayerConfig", menuName = "Scriptable Objects/PlayerConfig")]
-    public class PlayerConfig : Config
+    public class PlayerConfig : ScriptableObject
     {
         [field: SerializeField] public float Force { get; private set; }
     }

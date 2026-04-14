@@ -42,7 +42,7 @@ namespace JointMaster.Scripts.Players
         }
 
         private void OnSwing() =>
-            _swing.SetForce(_config.Force);
+            _swing.AddForce(_config.Force);
 
         private void OnFire() =>
             _catapult.Fire();
